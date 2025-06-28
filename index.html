@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FiTam - Official Store</title>
+    <title>iTam Store - Official FEU Tech Merchandise</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -42,6 +43,14 @@
             right: 0;
             bottom: 0;
             background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="30" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="70" r="1.5" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-repeat: repeat;
+            background-size: 200px 200px;
+            animation: move-bg 18s linear infinite;
+            z-index: 1;
+        }
+        @keyframes move-bg {
+            0% { background-position: 0 0; }
+            100% { background-position: 200px 200px; }
         }
 
         .nav {
@@ -205,22 +214,31 @@
         }
 
         .hero-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             position: relative;
             z-index: 2;
         }
 
-        .hero-title {
-            font-size: 48px;
-            font-weight: bold;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        .hero-title,
+        .hero-subtitle {
+            width: 100%;
+            text-align: center;
+        }
+
+
+        .cta-button {
+            position: relative;
+            z-index: 3;
+            margin-top: 36px;
         }
 
         .hero-subtitle {
-            font-size: 20px;
-            opacity: 0.9;
-            max-width: 600px;
-            margin: 0 auto;
+            min-height: 40px;
+            display: inline-block;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .cta-button {
@@ -237,6 +255,7 @@
             box-shadow: 0 5px 15px rgba(244, 185, 66, 0.4);
             position: relative;
             overflow: hidden;
+            z-index: 3;
         }
 
         .cta-button::before {
@@ -537,18 +556,18 @@
             right: 0;
             bottom: 0;
             background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="90" cy="20" r="0.5" fill="rgba(255,255,255,0.1)"/><circle cx="30" cy="80" r="1.5" fill="rgba(255,255,255,0.1)"/><circle cx="70" cy="60" r="0.8" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-repeat: repeat;
+            background-size: 200px 200px;
+            animation: move-bg-cta 22s linear infinite;
+            z-index: 1;
         }
-
-        .cta-title {
-            font-size: 36px;
-            font-weight: bold;
-            margin-bottom: 20px;
+        @keyframes move-bg-cta {
+            0% { background-position: 0 0; }
+            100% { background-position: 200px 200px; }
         }
-
-        .cta-subtitle {
-            font-size: 18px;
-            opacity: 0.9;
-            margin-bottom: 40px;
+        .cta-section > .container {
+            position: relative;
+            z-index: 2;
         }
 
         .footer {
@@ -743,6 +762,33 @@
         .product-image-placeholder img[alt="image"] {
             object-position: top;
         }
+.store-name {
+    font-family: 'Pacifico', cursive;
+    font-size: 32px;
+    color: #f4b942;
+    letter-spacing: 2px;
+    margin-left: 4px;
+    text-shadow:
+        0 2px 16px #28732d,  
+        0 0 8px #1a4e1e,     
+        0 0 2px #fff;         
+    font-weight: 700;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.store-name-2 {
+    font-family: 'Pacifico', cursive;
+    font-size: 32px;
+    color: #ffb31b;
+    letter-spacing: 2px;
+    margin-left: 4px;
+    text-shadow:
+        0 5px 8px #044708,  
+        0 0 5px #011702;         
+    display: inline-block;
+    vertical-align: top;
+}
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
@@ -752,11 +798,11 @@
             <nav class="nav">
                 <div class="logo">
                     <span class="logo-placeholder">
-                        <a href="https://imgbb.com/">
+                        <a href="https://www.feutech.edu.ph/">
                             <img src="https://i.ibb.co/JFztS41r/image.png" alt="image" border="0">
                         </a>
                     </span>
-                    iTAM STORE
+                    <span class="store-name">iTAM STORE</span>
                 </div>
                 <ul class="nav-links">
                     <li><a href="#home">Home</a></li>
@@ -778,7 +824,7 @@
             </nav>
             <div class="hero-content">
                 <h1 class="hero-title">The Official iTamaraw Merchandise</h1>
-                <p class="hero-subtitle">Experience premium-quality FEU Institute of Technology apparel, accessories, and collectibles. Crafted for brave iTamaraws. Celebrate your school spirit with authentic merchandise from the country’s premier tech institution.</p>
+                <p class="hero-subtitle" id="typing-desc"></p>
                 <button class="cta-button">Shop Now</button>
             </div>
         </div>
@@ -905,7 +951,7 @@
 
     <section class="features-section">
         <div class="container">
-            <h2 class="section-title">Why Choose iTam Store?</h2>
+            <h2 class="section-title">Why Choose <span class="store-name-2">iTAM STORE</span> ?</h2>
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">
@@ -989,7 +1035,6 @@
         mobileMenu.classList.toggle('active');
     });
 
-    // Close mobile menu when clicking on a link
     document.querySelectorAll('.nav-links.mobile-menu a').forEach(link => {
         link.addEventListener('click', () => {
             hamburger.classList.remove('active');
@@ -997,13 +1042,42 @@
         });
     });
 
-    // Close mobile menu when clicking outside
     document.addEventListener('click', (e) => {
         if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
             hamburger.classList.remove('active');
             mobileMenu.classList.remove('active');
         }
     });
+
+    const typingText = "Experience premium-quality FEU Institute of Technology apparel, accessories, and collectibles. Crafted for brave iTamaraws. Celebrate your school spirit with authentic merchandise from the country’s premier tech institution.";
+const typingTarget = document.getElementById('typing-desc');
+let idx = 0;
+let direction = 1; 
+let pause = false;
+
+function typeEffect() {
+    if (pause) return;
+    if (direction === 1) {
+        if (idx <= typingText.length) {
+            typingTarget.innerHTML = typingText.slice(0, idx) + '<span class="typing-cursor">|</span>';
+            idx++;
+            setTimeout(typeEffect, 28);
+        } else {
+            pause = true;
+            setTimeout(() => { direction = -1; pause = false; typeEffect(); }, 3500); 
+        }
+    } else {
+        if (idx >= 0) {
+            typingTarget.innerHTML = typingText.slice(0, idx) + '<span class="typing-cursor">|</span>';
+            idx--;
+            setTimeout(typeEffect, 10);
+        } else {
+            pause = true;
+            setTimeout(() => { direction = 1; pause = false; typeEffect(); }, 1200);
+        }
+    }
+}
+typeEffect();
     </script>
 </body>
 </html>
