@@ -17,7 +17,7 @@
             padding: 0 20px;
         }
 
-        /* Header base styles */
+        /* Header and nav base styles */
 .header {
   background: #fff;
   box-shadow: 0 2px 8px rgba(0,0,0,0.03);
@@ -73,6 +73,7 @@
   cursor: pointer;
   gap: 5px;
   margin-left: 18px;
+  z-index: 101;
 }
 .hamburger span {
   width: 28px;
@@ -110,11 +111,26 @@
 
 /* Responsive styles */
 @media (max-width: 991px) {
+  .nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+  }
+  .logo {
+    flex: 0 0 auto;
+    min-width: 0;
+  }
   .nav-links {
     display: none;
   }
   .hamburger {
     display: flex;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
   }
   .mobile-menu {
     display: none;
@@ -122,24 +138,22 @@
   .mobile-menu.active {
     display: flex;
   }
-  .logo {
-    flex: 1 1 0;
-    justify-content: flex-start;
-  }
-  .nav {
-    flex-wrap: wrap;
-  }
 }
 
-/* Optional: Stack logo and hamburger on very small screens */
+/* Optional: Stack logo and nav vertically on very small screens, but keep hamburger right */
 @media (max-width: 600px) {
   .nav {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
   }
   .logo {
-    margin-bottom: 8px;
+    margin-bottom: 0;
+  }
+  .hamburger {
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
   }
 }
 
