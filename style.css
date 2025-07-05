@@ -1,4 +1,4 @@
-        * {
+* {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -16,6 +16,132 @@
             margin: 0 auto;
             padding: 0 20px;
         }
+
+        /* Header base styles */
+.header {
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  position: relative;
+  z-index: 10;
+}
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 0;
+  position: relative;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.logo img {
+  height: 48px;
+}
+.store-name {
+  font-family: 'Pacifico', cursive;
+  font-size: 1.7rem;
+  color: #2d5a27;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* Desktop nav links */
+.nav-links {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav-links a {
+  color: #2d5a27;
+  font-weight: 600;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  transition: color 0.2s;
+}
+.nav-links a:hover {
+  color: #f4b942;
+}
+
+/* Hamburger menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  margin-left: 18px;
+}
+.hamburger span {
+  width: 28px;
+  height: 3px;
+  background: #2d5a27;
+  border-radius: 2px;
+  display: block;
+  transition: all 0.3s;
+}
+
+/* Mobile menu hidden by default */
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: #fff;
+  width: 100vw;
+  left: 0;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+  z-index: 99;
+  padding: 24px 0 12px 0;
+  gap: 18px;
+}
+.mobile-menu li {
+  text-align: center;
+  margin: 0;
+}
+.mobile-menu a {
+  font-size: 1.2rem;
+  padding: 10px 0;
+  display: block;
+}
+
+/* Responsive styles */
+@media (max-width: 991px) {
+  .nav-links {
+    display: none;
+  }
+  .hamburger {
+    display: flex;
+  }
+  .mobile-menu {
+    display: none;
+  }
+  .mobile-menu.active {
+    display: flex;
+  }
+  .logo {
+    flex: 1 1 0;
+    justify-content: flex-start;
+  }
+  .nav {
+    flex-wrap: wrap;
+  }
+}
+
+/* Optional: Stack logo and hamburger on very small screens */
+@media (max-width: 600px) {
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .logo {
+    margin-bottom: 8px;
+  }
+}
 
         .header {
             background: linear-gradient(135deg, #f4b942 0%, #2d5a27 100%);

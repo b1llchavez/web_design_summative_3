@@ -5,14 +5,13 @@ document.querySelector('.contact-form').addEventListener('submit', function(e){
     setTimeout(()=>{ document.getElementById('contact-success').style.display = 'none'; }, 4000);
 });
 
-    const hamburger = document.querySelector('.hamburger');
-    const mobileMenu = document.querySelector('.nav-links.mobile-menu');
-
-    hamburger.addEventListener('click', (e) => {
-        e.stopPropagation();
-        hamburger.classList.toggle('active');
-        mobileMenu.classList.toggle('active');
-    });
+document.addEventListener('DOMContentLoaded', function() {
+  const hamburger = document.querySelector('.hamburger');
+  const mobileMenu = document.querySelector('.mobile-menu');
+  hamburger.addEventListener('click', function() {
+    mobileMenu.classList.toggle('active');
+  });
+});
 
     document.querySelectorAll('.nav-links.mobile-menu a').forEach(link => {
         link.addEventListener('click', () => {
