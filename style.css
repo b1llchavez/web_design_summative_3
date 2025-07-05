@@ -17,7 +17,6 @@
             padding: 0 20px;
         }
 
-        /* Header and nav base styles */
 .header {
   background: #fff;
   box-shadow: 0 2px 8px rgba(0,0,0,0.03);
@@ -47,7 +46,6 @@
   letter-spacing: 1px;
 }
 
-/* Desktop nav links */
 .nav-links {
   display: flex;
   gap: 28px;
@@ -66,7 +64,6 @@
   color: #f4b942;
 }
 
-/* Hamburger menu */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -84,7 +81,6 @@
   transition: all 0.3s;
 }
 
-/* Mobile menu hidden by default */
 .mobile-menu {
   display: none;
   flex-direction: column;
@@ -109,7 +105,6 @@
   display: block;
 }
 
-/* Responsive styles */
 @media (max-width: 991px) {
   .nav {
     padding: 0 18px;
@@ -247,7 +242,9 @@
             gap: 30px;
             list-style: none;
             transition: all 0.3s ease;
-            margin-top: 18px; 
+            margin-top: 0; 
+            margin-bottom: 0;
+            align-items: center;
         }
 
         .nav-links a {
@@ -260,7 +257,10 @@
             position: relative;
             z-index: 1;
             background: transparent;
-            margin-top: 12px;
+            margin-top: 0;
+            margin-bottom: 0;
+            display: flex;
+            align-items: center; 
         }
 
         .nav-links a:hover {
