@@ -112,48 +112,26 @@
 /* Responsive styles */
 @media (max-width: 991px) {
   .nav {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
+    padding: 0 18px;
   }
   .logo {
-    flex: 0 0 auto;
-    min-width: 0;
-  }
-  .nav-links {
-    display: none;
+    margin-right: auto;
   }
   .hamburger {
-    display: flex;
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-  .mobile-menu {
-    display: none;
-  }
-  .mobile-menu.active {
-    display: flex;
+    margin-left: auto;
+    position: static;
+    right: unset;
+    top: unset;
+    transform: none;
   }
 }
 
-/* Optional: Stack logo and nav vertically on very small screens, but keep hamburger right */
 @media (max-width: 600px) {
   .nav {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+    padding: 0 8px;
   }
   .logo {
-    margin-bottom: 0;
-  }
-  .hamburger {
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
+    font-size: 22px;
   }
 }
 
